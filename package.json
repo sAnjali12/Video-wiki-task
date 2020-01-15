@@ -1,0 +1,53 @@
+{
+  "name": "tvw_test_app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.20.8",
+    "mongo": "^0.1.0",
+    "mongoose": "^5.8.7",
+    "mysql": "^2.17.1",
+    "mysql2": "^2.1.0",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-scripts": "3.2.0",
+    "save": "^2.4.0",
+    "socket.io": "^2.3.0"
+  },
+  "scripts": {
+    "dev:front": "react-scripts start",
+    "dev:server": "node server/index.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "description": "-Nodejs     -React     -Redux     -Socket.io     -Mongodb     -JWT     -Basic knowledge in docker/docker-compose is prefferred",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hassanamin994/videowiki-test-task.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hassanamin994/videowiki-test-task/issues"
+  },
+  "homepage": "https://github.com/hassanamin994/videowiki-test-task#readme"
+}
