@@ -54,5 +54,20 @@ register.post("/createPost",(req,res)=>{
     })
 });
 
+register.post('/userLikes',(req,res)=>{
+    const userLikes={
+        "likes": req.body.likes,
+        "comment": req.body.comment,
+        "user_id": req.body.user_id,
+        "post_id": req.body.post_id
+    }
+    let Response = video_wikiDb.userLikes(userLikes)
+    Response.then((data)=>{
+        return res.json(data);
+    }).catch((err)=>{
+        res.send(err)
+    });
+})
+
 
 module.exports = register;
