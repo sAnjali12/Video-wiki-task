@@ -13,4 +13,8 @@ var creatPost = (userPost)=>{
     return knex('createPost').insert(userPost)
 }
 
-module.exports={insertData, user_login, creatPost}
+var userLikes =(likes)=>{
+    return knex.from("user_likes").insert(likes)
+}
+
+module.exports={insertData, user_login, creatPost, userLikes}
