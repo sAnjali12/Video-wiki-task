@@ -70,4 +70,18 @@ register.post('/userLikes',(req,res)=>{
 })
 
 
+register.get('/likeCount/:post_id',(req,res)=>{
+    var post_id = req.params.post_id
+    let Response = video_wikiDb.likeCount(post_id)
+    Response.then((data)=>{
+        var count = 0
+        for(var index in data){
+            count = count+1
+        }
+        res.send({like:count})
+    }).catch((err)=>{
+        res.send(err)
+    })
+});
+
 module.exports = register;
