@@ -44,7 +44,9 @@ register.get("/login",(req, res)=> {
 
 register.post("/createPost",(req,res)=>{
     var userPost = {
-        "post": req.body.post,
+        post_url: req.body.post_url,
+        caption: req.body.caption,
+        user_id: req.body.user_id 
     }
     let Response = video_wikiDb.creatPost(userPost)
     Response.then((data)=>{
@@ -70,6 +72,15 @@ register.post('/userLikes',(req,res)=>{
 })
 
 
+register.get("/homePage",(req,res)=>{
+    let Response = video_wikiDb.homePage()
+    Response.then((data)=>{
+        return res.json(data);
+    }).catch((err)=>{
+        res.send(err)
+    });
+})
+
 register.get('/likeCount/:post_id',(req,res)=>{
     var post_id = req.params.post_id
     let Response = video_wikiDb.likeCount(post_id)
@@ -83,5 +94,33 @@ register.get('/likeCount/:post_id',(req,res)=>{
         res.send(err)
     })
 });
+
+
+register.post('/userDetails',(req,res)=>{
+    var userDetails = {
+        Name:req.body.Name,
+        Birthday:req.body.Birthday,
+        Mobile:req.body.Mobile,
+        Gender:req.body.Gender,
+        Location:req.body.Location,
+        Education:req.body.Education,
+        Experience:req.body.Experience,
+    }
+    let Response = video_wikiDb.insertUserDetails(userDetails)
+    Response.then((result)=>{
+        return res.json(result);
+    }).catch((err)=>{
+        res.send(err)
+    });
+});
+
+
+
+
+
+
+
+
+
 
 module.exports = register;
